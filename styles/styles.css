@@ -3,3 +3,269 @@
     font-family: "Cherry Swash";
     src: url("../assets/CherrySwash-Regular.ttf");
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: f3ebdd;
+    font-family: "Cherry Swash", serif;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #f3ebdd;
+    padding: 20px;
+    z-index: 100;
+}
+
+.logo {
+    width: 65px;
+}
+
+main {
+    padding: 0 35px 130px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    line-height: 1.4;
+    text-align: center;
+    color: #2e4229;
+    margin: 0 0 20px;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #2e4229;
+    margin: 0 0 5px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.kaart-frame,
+.nieuws-frame {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Onderste navigatie */
+
+/* Onderste navigatie */
+
+.onderste-navigatie {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    background-color: #bae3ff;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 100;
+    overflow: visible;
+}
+
+/* Navigatieknoppen */
+
+.onderste-navigatie a {
+    position: relative;
+    width: 23%;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Groene waterlelieblaadjes */
+
+.onderste-navigatie .blad {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Gele cirkel met symbool */
+
+.onderste-navigatie .icoon {
+    position: absolute;
+    width: 45%;
+    z-index: 3;
+
+    transform: translateY(-12px);
+}
+
+/* Bloemblaadjes */
+
+.onderste-navigatie .bloem {
+    position: absolute;
+    width: 95%;
+    z-index: 2;
+
+    opacity: 0;
+    transform: translateY(-12px) scale(0.3);
+
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Bloem verschijnt bij hover */
+
+.onderste-navigatie a:hover .bloem,
+.onderste-navigatie a:focus-visible .bloem {
+    opacity: 1;
+    transform: translateY(-12px) scale(1);
+}
+
+/* Mobiele breedte op desktop */
+
+@media (min-width: 600px) {
+    .onderste-navigatie {
+        max-width: 430px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* veldverkenner */
+
+.veldverkenner-pagina {
+    background-color: #efffd2;
+}
+
+.veldverkenner-main {
+    padding: 0;
+}
+
+/* kaart */
+
+
+.kaart-container {
+    position: relative;
+    height: calc(100dvh - 145px);
+    min-height: 400px;
+    overflow: hidden;
+}
+
+
+.grote-kaart {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* swipe slider */
+
+.planten-slider {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    padding: 0 10%;
+}
+
+.planten-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.swipe-kaart {
+    flex: 0 0 75%;
+    width: 75%;
+    height: auto;
+    scroll-snap-align: center;
+}
+
+.veldverkenner-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px 20px;
+}
+
+.veldverkenner-header a {
+    position: absolute;
+    left: 20px;
+}
+
+.veldverkenner-header img {
+    width: 45px;
+    display: block;
+}
+
+.veldverkenner-header h1 {
+    font-family: "Cherry Swash", serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    color: #2e4229;
+}
+
+.veldverkenner-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 15px 20px;
+    min-height: 75px;
+    border: none;
+}
+
+.kaart-container {
+    position: relative;
+    width: 100%;
+    height: calc(100dvh - 145px);
+    min-height: 400px;
+    overflow: hidden;
+    border: none;
+}
+
+.grote-kaart {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+
+@media (min-width: 600px) {
+    html {
+        background-color: #111513;
+    }
+
+    body {
+        max-width: 430px;
+        min-height: 100vh;
+        margin: 0 auto;
+        background-color: #f3ebdd
+    }
+
+    .onderste-navigatie {
+        max-width: 430px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
