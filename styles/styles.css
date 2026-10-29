@@ -14,7 +14,7 @@ body {
     font-family: "Cherry Swash", serif;
 }
 
-/* Header */
+/* header */
 
 header {
     position: sticky;
@@ -28,7 +28,7 @@ header {
     width: 65px;
 }
 
-/* Homepage */
+/* homepage */
 
 main {
     padding: 0 35px 130px;
@@ -61,14 +61,14 @@ section {
     display: block;
 }
 
-/* Onderste navigatie */
+/* onderste navigatie */
 
 .onderste-navigatie {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 110px;
+    height: 100px;
     background-color: #302525;
 
     display: flex;
@@ -79,7 +79,7 @@ section {
     overflow: visible;
 }
 
-/* Navigatieknoppen */
+/* navigatieknoppen */
 
 .onderste-navigatie a {
     position: relative;
@@ -88,7 +88,7 @@ section {
     display: block;
 }
 
-/* Groene waterleliebladen */
+/* groene waterleliebladen */
 
 .onderste-navigatie .blad {
     position: absolute;
@@ -99,7 +99,7 @@ section {
     z-index: 1;
 }
 
-/* Gesloten bloemen */
+/* gesloten bloemen */
 
 .onderste-navigatie .bloem-dicht {
     position: absolute;
@@ -112,7 +112,7 @@ section {
     transition: opacity 0.25s ease;
 }
 
-/* Open bloemen */
+/* open bloemen */
 
 .onderste-navigatie .bloem-open {
     position: absolute;
@@ -125,7 +125,7 @@ section {
     transition: opacity 0.25s ease;
 }
 
-/* Bloemen openen bij hover */
+/* bloemen openen bij hover */
 
 .onderste-navigatie a:hover .bloem-dicht,
 .onderste-navigatie a:focus-visible .bloem-dicht {
@@ -137,7 +137,7 @@ section {
     opacity: 1;
 }
 
-/* Veldverkenner pagina */
+/* veldverkenner pagina */
 
 .veldverkenner-pagina {
     background-color: #f3ebdd;
@@ -176,7 +176,7 @@ section {
     color: #2e4229;
 }
 
-/* Kaart */
+/* kaart */
 
 .kaart-container {
     position: relative;
@@ -194,7 +194,7 @@ section {
     border: none;
 }
 
-/* Swipe slider */
+/* swipe slider */
 
 .planten-slider {
     position: absolute;
@@ -224,7 +224,81 @@ section {
     scroll-snap-align: center;
 }
 
-/* Mobiele weergave op desktop */
+/* collectie pagina */
+
+.collectie-pagina {
+    background-color: #f3eadd;
+}
+
+.collectie-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: #f3eadd;
+    padding: 20px;
+    z-index: 50;
+}
+
+.collectie-header a {
+    position: absolute;
+    left: 20px;
+}
+
+.collectie-header img {
+    width: 45px;
+    display: block;
+}
+
+.collectie-header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.collectie-main {
+    padding: 25px 20px 150px;
+}
+
+.collectie-main p {
+    color: #2e4229;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* grid */
+
+.planten-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* kaartjes */
+
+.plant-kaart {
+    background-color: #9bb9a3;
+    border-radius: 18px;
+    padding: 10px;
+    text-align: center;
+}
+
+.plant-kaart img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.plant-kaart h2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #2e4229;
+}
+
+
+/* mobiele weergave op desktop */
 
 @media (min-width: 600px) {
     html {
