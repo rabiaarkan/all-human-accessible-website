@@ -10,9 +10,11 @@
 
 body {
     margin: 0;
-    background-color: f3ebdd;
+    background-color: #f3ebdd;
     font-family: "Cherry Swash", serif;
 }
+
+/* Header */
 
 header {
     position: sticky;
@@ -25,6 +27,8 @@ header {
 .logo {
     width: 65px;
 }
+
+/* Homepage */
 
 main {
     padding: 0 35px 130px;
@@ -59,15 +63,13 @@ section {
 
 /* Onderste navigatie */
 
-/* Onderste navigatie */
-
 .onderste-navigatie {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 85px;
-    background-color: #bae3ff;
+    height: 110px;
+    background-color: #302525;
 
     display: flex;
     justify-content: space-around;
@@ -81,92 +83,119 @@ section {
 
 .onderste-navigatie a {
     position: relative;
-    width: 23%;
-    height: 80px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 25%;
+    height: 110px;
+    display: block;
 }
 
-/* Groene waterlelieblaadjes */
+/* Groene waterleliebladen */
 
 .onderste-navigatie .blad {
     position: absolute;
-    width: 100%;
+    width: 78%;
+    height: auto;
+    left: 11%;
+    top: 42px;
     z-index: 1;
 }
 
-/* Gele cirkel met symbool */
+/* Gesloten bloemen */
 
-.onderste-navigatie .icoon {
+.onderste-navigatie .bloem-dicht {
     position: absolute;
-    width: 45%;
-    z-index: 3;
-
-    transform: translateY(-12px);
-}
-
-/* Bloemblaadjes */
-
-.onderste-navigatie .bloem {
-    position: absolute;
-    width: 95%;
+    width: 75%;
+    height: auto;
+    left: 12.5%;
+    top: 10px;
     z-index: 2;
-
-    opacity: 0;
-    transform: translateY(-12px) scale(0.3);
-
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Bloem verschijnt bij hover */
-
-.onderste-navigatie a:hover .bloem,
-.onderste-navigatie a:focus-visible .bloem {
     opacity: 1;
-    transform: translateY(-12px) scale(1);
+    transition: opacity 0.25s ease;
 }
 
-/* Mobiele breedte op desktop */
+/* Open bloemen */
 
-@media (min-width: 600px) {
-    .onderste-navigatie {
-        max-width: 430px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
+.onderste-navigatie .bloem-open {
+    position: absolute;
+    width: 115%;
+    height: auto;
+    left: -16.5%;
+    top: -5px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.25s ease;
 }
 
-/* veldverkenner */
+/* Bloemen openen bij hover */
+
+.onderste-navigatie a:hover .bloem-dicht,
+.onderste-navigatie a:focus-visible .bloem-dicht {
+    opacity: 0;
+}
+
+.onderste-navigatie a:hover .bloem-open,
+.onderste-navigatie a:focus-visible .bloem-open {
+    opacity: 1;
+}
+
+/* Veldverkenner pagina */
 
 .veldverkenner-pagina {
-    background-color: #efffd2;
+    background-color: #f3ebdd;
 }
 
 .veldverkenner-main {
     padding: 0;
 }
 
-/* kaart */
-
-
-.kaart-container {
+.veldverkenner-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    height: calc(100dvh - 145px);
-    min-height: 400px;
-    overflow: hidden;
+    padding: 15px 20px;
+    min-height: 75px;
+    border: none;
 }
 
+.veldverkenner-header a {
+    position: absolute;
+    left: 20px;
+}
 
-.grote-kaart {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.veldverkenner-header img {
+    width: 45px;
     display: block;
 }
 
-/* swipe slider */
+.veldverkenner-header h1 {
+    font-family: "Cherry Swash", serif;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+    color: #2e4229;
+}
+
+/* Kaart */
+
+.kaart-container {
+    position: relative;
+    width: 100%;
+    height: calc(100dvh - 145px);
+    min-height: 400px;
+    overflow: hidden;
+    border: none;
+}
+
+.grote-kaart {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+}
+
+/* Swipe slider */
 
 .planten-slider {
     position: absolute;
@@ -196,60 +225,7 @@ section {
     scroll-snap-align: center;
 }
 
-.veldverkenner-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 15px 20px;
-}
-
-.veldverkenner-header a {
-    position: absolute;
-    left: 20px;
-}
-
-.veldverkenner-header img {
-    width: 45px;
-    display: block;
-}
-
-.veldverkenner-header h1 {
-    font-family: "Cherry Swash", serif;
-    font-size: 1.6rem;
-    font-weight: normal;
-    margin: 0;
-    text-align: center;
-    color: #2e4229;
-}
-
-.veldverkenner-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding: 15px 20px;
-    min-height: 75px;
-    border: none;
-}
-
-.kaart-container {
-    position: relative;
-    width: 100%;
-    height: calc(100dvh - 145px);
-    min-height: 400px;
-    overflow: hidden;
-    border: none;
-}
-
-.grote-kaart {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border: none;
-}
-
+/* Mobiele weergave op desktop */
 
 @media (min-width: 600px) {
     html {
@@ -260,7 +236,7 @@ section {
         max-width: 430px;
         min-height: 100vh;
         margin: 0 auto;
-        background-color: #f3ebdd
+        background-color: #f3ebdd;
     }
 
     .onderste-navigatie {
